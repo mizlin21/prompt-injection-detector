@@ -34,6 +34,21 @@ RULES: List[Dict[str, Any]] = [
         "message": "Direct instruction to refuse higher-priority constraints.",
         "confidence": 0.75,
     },
+        {
+        "id": "PI-005",
+        "severity": "high",
+        "pattern": r"(call|use|invoke)\s+(the\s+)?(tool|api|function)|execute\s+(a\s+)?(command|request)",
+        "message": "Potential tool/API invocation attempt (risk of agent/tool hijack).",
+        "confidence": 0.70,
+    },
+    {
+        "id": "PI-006",
+        "severity": "high",
+        "pattern": r"(api key|secret key|access token|password|private key|ssh key)",
+        "message": "Potential secret/token exfiltration cue.",
+        "confidence": 0.65,
+    },
+
 ]
 
 
