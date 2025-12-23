@@ -9,7 +9,7 @@ RULES: List[Dict[str, Any]] = [
     {
         "id": "PI-001",
         "severity": "high",
-        "pattern": r"(ignore|disregard|override)\s+(all|previous|prior)\s+(instructions|rules)",
+        "pattern": r"(ignore|disregard|override)\s+(all\s+)?(previous|prior)\s+(instructions|rules)",
         "message": "Attempt to override instruction hierarchy (classic injection pattern).",
         "confidence": 0.85,
     },
