@@ -15,3 +15,9 @@ Scan retrieved documents before adding them to the model context:
 ```bash
 python -m app.cli rag data/rag_bundle.json --profile strict
 
+```md
+## Evaluation
+PID includes a tiny labeled evaluation corpus and metrics runner:
+
+```bash
+python -m app.evaluate
