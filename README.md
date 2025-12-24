@@ -8,3 +8,10 @@ PID supports tunable detection profiles to balance false positives vs security:
 ### Example
 ```bash
 python -m app.cli data/attacks/injection_01.txt --source retrieved_doc --profile strict
+
+## RAG scanning (retrieved documents)
+Scan retrieved documents before adding them to the model context:
+
+```bash
+python -m app.cli rag data/rag_bundle.json --profile strict
+
