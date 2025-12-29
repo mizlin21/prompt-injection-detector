@@ -16,17 +16,48 @@ PID is designed as a **guardrail layer** that can run:
 - inside RAG pipelines
 - in CI for safety testing
 
+--- 
+
+## Motivation
+
+Modern LLM applications increasingly rely on retrieval-augmented generation (RAG) and tool execution.
+While powerful, these patterns introduce new attack surfaces where untrusted content can influence
+model behavior through prompt injection.
+
+This project explores how prompt injection can be detected *before model execution*, using
+transparent, auditable rules rather than opaque black-box filtering.
+
+The goal is not to claim perfect detection, but to demonstrate how security engineers can reason
+about risk, tradeoffs, and evaluation when building guardrails for AI systems.
+
 ---
 
 ## Key features
 - **Profiles:** `strict`, `balanced`, `permissive`
 - **Source-aware scoring:** higher sensitivity for `retrieved_doc` and tool output
 - **RAG scanning:** chunk-level analysis with overlap + document-level aggregation
-- **Explainable output:** rule ID, severity, confidence, and span metadata
+- **Explainable output:** rule ID, severity, confidence, and span-level metadata
 - **Evaluation:** labeled corpus with precision / recall / F1
 - **CI:** GitHub Actions automatically runs tests
 
 ---
+
+## High-level architecture
+```text
+User Input / Retrieved Documents
+          |
+          v
++----------------------+
+| Prompt Injection     |
+| Detector (PID)       |
++----------------------+
+          |
+          v
+Risk Score + Findings
+          |
+          v
+Allow / Block / Review
+```
 
 ## Quickstart
 
