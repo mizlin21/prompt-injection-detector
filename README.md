@@ -39,6 +39,7 @@ about risk, tradeoffs, and evaluation when building guardrails for AI systems.
 - **Explainable output:** rule ID, severity, confidence, and span-level metadata
 - **Evaluation:** labeled corpus with precision / recall / F1
 - **CI:** GitHub Actions automatically runs tests
+- **Attack intent taxonomy:** detections map to categories (see `docs/ATTACK_TAXONOMY.md`)
 
 ---
 

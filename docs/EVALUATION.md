@@ -27,3 +27,6 @@ python -m app.evaluate
 
 Two false negatives involved authority-coercion prompts without explicit exfiltration.
 This tradeoff was accepted to minimize false positives in RAG contexts.
+
+## Future work: Per-category evaluation
+As the labeled corpus grows, results will be reported by attack category (intent taxonomy) to identify weak spots and tuning opportunities.
