@@ -13,6 +13,7 @@ class Finding:
     severity: Severity
     confidence: float  # 0.0 - 1.0
     message: str
+    attack_type: str | None = None
     spans: Optional[List[Dict[str, int]]] = None  # [{"start": 10, "end": 42}]
 
 
