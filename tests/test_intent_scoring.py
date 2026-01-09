@@ -27,7 +27,7 @@ def test_intent_weighting_changes_score():
         )
     ]
 
-    exfil_score = score(exfil, severity_weight, source_mult=1.0)
-    override_score = score(override, severity_weight, source_mult=1.0)
+    exfil_score = score(exfil, severity_weight, source_multiplier=1.0)
+    override_score = score(override, severity_weight, source_multiplier=1.0)
 
     assert exfil_score > override_score

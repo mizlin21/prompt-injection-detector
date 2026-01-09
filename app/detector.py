@@ -39,13 +39,11 @@ def score(
         # Intent-weighted risk contribution
         intent = getattr(f, "attack_type", None)
         intent_mult = INTENT_MULTIPLIERS.get(intent, 1.0)
-        contrib = base * intent_mult
-
-        total += contrib
+        
+        total += base * intent_mult
 
     # Apply source sensitivity once at the end (user vs retrieved_doc vs tool_output)
     total *= source_multiplier
-
     return min(100.0, round(total, 2))
 
 def detect(
@@ -59,8 +57,8 @@ def detect(
     prof = PROFILES[profile]
     findings = run_rules(norm)
 
-    source_mult = prof.source_multiplier.get(source, 1.0)
-    risk = score(findings, prof.severity_weight, source_mult)
+    source_multiplier = prof.source_multiplier.get(source, 1.0)
+    risk = score(findings, prof.severity_weight, source_multiplier)
 
     return ScanResult(
         is_injection=(risk >= prof.threshold),
