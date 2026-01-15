@@ -40,6 +40,7 @@ about risk, tradeoffs, and evaluation when building guardrails for AI systems.
 - **Evaluation:** labeled corpus with precision / recall / F1
 - **CI:** GitHub Actions automatically runs tests
 - **Attack intent taxonomy:** detections map to categories (see `docs/ATTACK_TAXONOMY.md`)
+- **Intent-aware scoring:** findings are classified by attack intent (e.g., instruction override, secret exfiltration) and weighted accordingly
 
 ---
 
@@ -81,12 +82,13 @@ python -m app.cli scan data/attacks/injection_01.txt --source user --profile bal
 ```json
 {
   "is_injection": true,
-  "risk_score": 78.75,
+  "risk_score": 98.55,
   "findings": [
     {
       "rule_id": "PI-001",
       "severity": "high",
       "confidence": 0.85
+      "attack_type": "instruction_override"
     }
   ]
 }
@@ -136,6 +138,7 @@ The goal is explainability, reproducibility, and safe iteration.
 - Chunk overlap prevents boundary-based bypass
 - Rules are explicit and auditable (SOC-friendly)
 - Evaluation is part of the development loop
+- Detection (rules), intent classification, and risk scoring are deliberately separated to support auditability and safe iteration
 
 ---
 
