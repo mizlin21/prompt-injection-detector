@@ -38,7 +38,7 @@ RULES: List[Dict[str, Any]] = [
         "message": "Direct instruction to refuse higher-priority constraints.",
         "confidence": 0.75,
     },
-        {
+    {
         "id": "PI-005",
         "severity": "high",
         "attack_type": "tool_action_forcing",
@@ -72,6 +72,7 @@ def run_rules(text: str) -> List[Finding]:
                 severity=rule["severity"],
                 confidence=float(rule["confidence"]),
                 message=rule["message"],
+                attack_type=rule.get("attack_type"),
                 spans=[{"start": m.start(), "end": m.end()}],
             )
         )
