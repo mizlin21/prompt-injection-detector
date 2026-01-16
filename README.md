@@ -40,7 +40,7 @@ about risk, tradeoffs, and evaluation when building guardrails for AI systems.
 - **Evaluation:** labeled corpus with precision / recall / F1
 - **CI:** GitHub Actions automatically runs tests
 - **Attack intent taxonomy:** detections map to categories (see `docs/ATTACK_TAXONOMY.md`)
-- **Intent-aware scoring:** findings are classified by attack intent (e.g., instruction override, secret exfiltration) and weighted accordingly
+- **Intent-aware scoring:** findings are classified by attack intent (e.g., instruction override, secret exfiltration) and weighted accordingly (see `docs/EVIDENCE.md`)
 
 ---
 
