@@ -102,7 +102,7 @@ python -m app.cli scan data/attacks/injection_01.txt --source user --profile bal
     {
       "rule_id": "PI-001",
       "severity": "high",
-      "confidence": 0.85
+      "confidence": 0.85,
       "attack_type": "instruction_override"
     }
   ]

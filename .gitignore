@@ -1,7 +1,4 @@
-# Python cache
+# Python cache / bytecode
 __pycache__/
 *.pyc
 
-# Python bytecode
-__pycache__/
-*.pyc
