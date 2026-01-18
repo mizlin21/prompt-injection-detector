@@ -5,6 +5,21 @@ A **rules-based, RAG-aware prompt injection detector** that scans user input and
 
 PID produces **auditable, explainable findings** (rule ID, severity, confidence, spans) and supports **tunable detection profiles** to balance false positives vs recall.
 
+## Portfolio Summary
+
+This project demonstrates how to design **intent-aware AI security guardrails**
+for LLM applications using RAG and tools.
+
+It includes:
+- a formal threat model
+- explicit attack intent taxonomy
+- source-aware risk scoring
+- deterministic, auditable detection
+- CI-enforced security invariants
+- documented evasion analysis and tradeoffs
+
+This is a **security system**, not a demo.
+
 ---
 
 ## Why this matters
@@ -158,6 +173,9 @@ docs/               Evaluation notes and design docs
 - Add obfuscation handling
 - Optional ML-assisted scoring layer
 - Multilingual prompt injection detection
+
+## For reviewers
+See docs/THREAT_MODEL.md, docs/DESIGN_DECISIONS.md, and docs/EVIDENCE.md.
 
 ---
 
